@@ -1,0 +1,5 @@
+petstore:
+  api:
+    baseurl: https://petstore.swagger.io/v2
+  swagger:
+    schema-path: "schema/petstoreapi/swagger-schema.json"

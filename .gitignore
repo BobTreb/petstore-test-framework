@@ -1,0 +1,12 @@
+/build/
+/.gradle/
+/.idea/
+.gradle/
+*.log
+*.jar
+*.war
+*.ear
+
+# Ignore OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
