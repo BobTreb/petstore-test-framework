@@ -1,0 +1,16 @@
+{
+  "id": 2,
+  "category": {
+    "id": 1232,
+    "name": "555"
+  },
+  "name": "CatTest",
+  "photoUrls": [],
+  "tags": [
+    {
+      "id": 2,
+      "name": "54"
+    }
+  ],
+  "status": "available"
+}

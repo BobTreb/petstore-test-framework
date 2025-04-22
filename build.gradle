@@ -1,0 +1,45 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'java'
+}
+
+group = 'com.petcircle'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()  // This should work for most dependencies
+    jcenter()       // Adding jcenter as a fallback repository
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-json:3.0.9'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation('io.rest-assured:rest-assured:4.5.1') {
+        exclude group: 'org.apache.groovy', module: 'groovy'
+        exclude group: 'org.apache.groovy', module: 'groovy-xml'
+    }
+    implementation 'io.rest-assured:json-schema-validator:4.5.1'
+    implementation 'io.swagger.parser.v3:swagger-parser:2.1.16'
+    implementation 'io.rest-assured:xml-path:4.5.1'
+
+    // Using a known version of extentreports (4.0.9) if 4.0.22 is unavailable
+    implementation 'com.aventstack:extentreports:4.0.9'
+
+    // Test Framework
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.codehaus.groovy:groovy:3.0.9'
+        force 'org.codehaus.groovy:groovy-xml:3.0.9'
+    }
+}

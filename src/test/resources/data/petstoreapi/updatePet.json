@@ -1,0 +1,18 @@
+{
+  "id": 5,
+  "category": {
+    "id": 13,
+    "name": "canine"
+  },
+  "name": "doggo",
+  "photoUrls": [
+    "google.com"
+  ],
+  "tags": [
+    {
+      "id": 10,
+      "name": "dalmatian"
+    }
+  ],
+  "status": "available"
+}
