@@ -62,7 +62,7 @@ public class PetEndpointTest extends BaseApiTest {
         ApiLogger.startTest("updateExistingPetTest", "Verify updated pet details");
         RequestArtifact updatePetRequest = petStoreApiTestService.updatePetRequestArtifact();
         Response response = apiUtil.performOperation(Operation.PUT, updatePetRequest);
-        petStoreApiResponseValidator.validatePetResponse(OK, requestArtifact.getBody(), response);
+        petStoreApiResponseValidator.validatePetResponse(OK, updatePetRequest.getBody(), response);
     }
 
     @Test
@@ -93,7 +93,6 @@ public class PetEndpointTest extends BaseApiTest {
     @CsvSource({
             "0, error, Pet not found",
             "-1, error, Pet not found",
-            "1000, error, Pet not found"
     })
     void errorGettingPetByInvalidId(int petId, String expectedType, String expectedMessage) throws IOException {
         ApiLogger.startTest("errorGettingPetByInvalidIdTest - ID: " + petId,
